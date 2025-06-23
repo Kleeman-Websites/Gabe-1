@@ -60,20 +60,15 @@
     }
     
     .card {
-      background-color: rgba(255, 255, 255, 0.3); /* translucent white */
-      color: #000; /* make sure text is visible */
+      background-color: rgba(255, 255, 255, 0.3); /* translucent light base */
+      color: #222; /* darker text at rest */
       transition: background-color 0.3s ease, color 0.3s ease;
-      /* other styles... */
+      /* other styles */
       display: flex;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       overflow: hidden;
       margin-bottom: 1rem;
-    }
-    
-    .card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
     
     .card img {
@@ -98,9 +93,9 @@
     }
 
     .card:hover {
-      background-color: rgba(255, 255, 255, 0.95); /* almost fully opaque */
-      color: #111; /* optionally darken text on hover */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      background-color: rgba(0, 0, 0, 0.75); /* dark translucent background on hover */
+      color: #f9f9f9; /* bright/light text on hover */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       transform: scale(1.02);
     }
     
