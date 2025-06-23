@@ -54,14 +54,21 @@
     }
 
     main {
-      padding-top: 70px;     /* adjust based on header height */
-      padding-bottom: 50px;  /* adjust based on footer height */
+      /* existing styles */
+      padding-top: 70px; /* space for header */
+      padding-bottom: 50px; /* space for footer */
       max-width: 800px;
       margin: auto;
       overflow-y: auto;
       height: calc(100vh - 120px); /* viewport height minus header/footer */
+      scrollbar-width: none; /* hide scrollbar in Firefox */
     }
-
+    
+    /* hide scroll bar in Chrome/Webkit */
+    main::-webkit-scrollbar {
+      display: none;
+    }
+    
     a {
       color: #007acc;
       text-decoration: none;
@@ -150,7 +157,8 @@
   </header>
 
   <main>
-
+    <div style="height: 70px;"></div> <!-- space below header -->
+    
     <!-- Card 1 :  -->
     <a href="https://example.com" class="card-link">
       <div class="card">
@@ -238,12 +246,14 @@
         </div>
       </div>
     </a>
-    
+
+    <div style="height: 50px;"></div> <!-- space above footer -->
   </main>
 
   <footer>
     <p>&copy; 2025 Your Name. All rights reserved.</p>
   </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
