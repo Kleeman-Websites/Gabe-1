@@ -14,32 +14,52 @@
 
   <!-- Basic CSS -->
   <style>
+    
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
+      background-image: url('your-background.jpg');
       background-color: #666666;
       color: #333;
       line-height: 1.6;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      margin: 0;
+      font-family: sans-serif;
     }
-
+    
     header {
-      background-color: #000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #000; /* keep your color or change */
       color: white;
       text-align: center;
       padding: 0.5rem 0;
+      z-index: 1000;
+      /* keep or add any other styles you have */
     }
 
     footer {
-      background-color: #000;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #000; 
       color: white;
       text-align: center;
       padding: 1rem 0;
+      z-index: 1000;
+      /* keep or add any other styles you have */
     }
 
     main {
-      padding: 2rem;
+      padding-top: 70px;     /* adjust based on header height */
+      padding-bottom: 50px;  /* adjust based on footer height */
       max-width: 800px;
       margin: auto;
+      overflow-y: auto;
+      height: calc(100vh - 120px); /* viewport height minus header/footer */
     }
 
     a {
@@ -131,6 +151,7 @@
 
   <main>
 
+    <!-- Card 1 :  -->
     <a href="https://example.com" class="card-link">
       <div class="card">
       <img src="https://via.placeholder.com/120" alt="Example Image" />
@@ -141,6 +162,7 @@
       </div>
     </a>
 
+    <!-- Card 2 :  -->
     <a href="https://example.com" class="card-link">
       <div class="card">
       <img src="https://via.placeholder.com/120" alt="Example Image" />
@@ -150,7 +172,63 @@
         </div>
       </div>
     </a>
-    
+
+    <!-- Card 3 :  -->
+    <a href="https://example.com" class="card-link">
+      <div class="card">
+      <img src="https://via.placeholder.com/120" alt="Example Image" />
+        <div class="card-content">
+          <h3 class="card-title">Card Title</h3>
+          <p class="card-text">Clicking this card takes you to another page!</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 4 :  -->
+    <a href="https://example.com" class="card-link">
+      <div class="card">
+      <img src="https://via.placeholder.com/120" alt="Example Image" />
+        <div class="card-content">
+          <h3 class="card-title">Card Title</h3>
+          <p class="card-text">Clicking this card takes you to another page!</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 5 :  -->
+    <a href="https://example.com" class="card-link">
+      <div class="card">
+      <img src="https://via.placeholder.com/120" alt="Example Image" />
+        <div class="card-content">
+          <h3 class="card-title">Card Title</h3>
+          <p class="card-text">Clicking this card takes you to another page!</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 6 :  -->
+    <a href="https://example.com" class="card-link">
+      <div class="card">
+      <img src="https://via.placeholder.com/120" alt="Example Image" />
+        <div class="card-content">
+          <h3 class="card-title">Card Title</h3>
+          <p class="card-text">Clicking this card takes you to another page!</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 7 :  -->
+    <a href="https://example.com" class="card-link">
+      <div class="card">
+      <img src="https://via.placeholder.com/120" alt="Example Image" />
+        <div class="card-content">
+          <h3 class="card-title">Card Title</h3>
+          <p class="card-text">Clicking this card takes you to another page!</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 8 :  -->
     <a href="https://example.com" class="card-link">
       <div class="card">
       <img src="https://via.placeholder.com/120" alt="Example Image" />
