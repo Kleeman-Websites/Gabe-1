@@ -60,8 +60,8 @@
     }
     
     .card {
-      background-color: rgba(255, 255, 255, 0.3); /* translucent light base */
-      color: #222; /* darker text at rest */
+      background-color: rgba(150, 150, 150, 0.3); /* translucent light base */
+      color: #666666; /* darker text at rest */
       transition: background-color 0.3s ease, color 0.3s ease;
       /* other styles */
       display: flex;
@@ -97,6 +97,10 @@
       color: #f9f9f9; /* bright/light text on hover */
       box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       transform: scale(1.02);
+    }
+
+    .card:hover .card-text {
+      color: #999999; /* explicitly override .card-text color on hover */
     }
     
     @media (max-width: 600px) {
