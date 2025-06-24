@@ -90,21 +90,24 @@
       color: #555; /* darker text at rest */
       /* other styles */
       display: flex;
+      flex-direction: row;
       will-change: transform;
       backface-visibility: hidden;
       transform-origin: center;
       transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       overflow: hidden;
+      align-items: stretch;
       margin-bottom: 1rem;
     }
     
     .card img {
-      width: 120px;
-      height: 120px;
+      width: 25%;
+      height: auto;
       object-fit: cover;
       opacity: 0.3; /* semi-transparent by default */
       transition: opacity 0.3s ease;
+      flex-shrink: 0;
     }
     
     .card-content {
@@ -150,18 +153,28 @@
     
     @media (max-width: 600px) {
       .card {
+        flex-direction: row;     /* ✅ keep image on the left */
         align-items: center;
-        text-align: center;
+        text-align: left;
       }
     
       .card img {
-        width: 100%;
+        width: 25%;
         height: auto;
       }
     
       .card-content {
-        padding: 1rem;
+        padding: 0.75rem;
       }
+      
+      .card-title {
+        font-size: 1rem;
+      }
+    
+      .card-text {
+        font-size: 0.9rem;
+      }
+      
     }
 
     
