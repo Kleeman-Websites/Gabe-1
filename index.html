@@ -102,6 +102,8 @@
       width: 120px;
       height: 120px;
       object-fit: cover;
+      opacity: 0.3; /* semi-transparent by default */
+      transition: opacity 0.3s ease;
     }
     
     .card-content {
@@ -128,6 +130,10 @@
 
     .card:hover .card-text {
       color: #999999; /* explicitly override .card-text color on hover */
+    }
+
+    .card:hover img {
+      opacity: 1; /* fully opaque on hover */
     }
     
     @media (max-width: 600px) {
