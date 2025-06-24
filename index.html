@@ -89,9 +89,12 @@
     .card {
       background-color: rgba(150, 150, 150, 0.3); /* translucent light base */
       color: #555; /* darker text at rest */
-      transition: background-color 0.3s ease, color 0.3s ease;
       /* other styles */
       display: flex;
+      will-change: transform;
+      backface-visibility: hidden;
+      transform-origin: center;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       overflow: hidden;
