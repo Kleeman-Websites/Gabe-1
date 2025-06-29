@@ -18,21 +18,13 @@
       background-color: #666666;
       color: #333;
       line-height: 1.6;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
       margin: 0;
       font-family: sans-serif;
     }
-
-    .bg-layer {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: opacity 1s ease-in-out;
-      z-index: -1; /* stay behind all content */
-      opacity: 0;
-    }
-        
+    
     header {
       position: fixed;
       top: 0;
@@ -41,7 +33,7 @@
       background-color: #000;
       color: white;
       text-align: center;
-      padding: 0.025rem 0;       /* reduce vertical padding */
+      padding: 0.1rem 0;       /* reduce vertical padding */
       font-size: 0.8rem;       /* optional: shrink text */
       z-index: 1000;
     }
@@ -54,7 +46,7 @@
       background-color: #000;
       color: white;
       text-align: center;
-      padding: 0.025rem 0;      /* reduce vertical padding */
+      padding: 0.05rem 0;      /* reduce vertical padding */
       font-size: 0.75rem;      /* optional: shrink text */
       z-index: 1000;
     }
@@ -190,10 +182,6 @@
 </head>
 <body>
 
-  <div id="bg1" class="bg-layer"></div>
-  <div id="bg2" class="bg-layer"></div>
-
-
   <header>
     <h1>Gabriel Kleeman</h1>
   </header>
@@ -312,48 +300,27 @@
       'images/gabe040.jpg',
       'images/gabe041.jpg',
       'images/gabe042.jpg'
-      // Add more as needed
+      // add more images here
     ];
   
-    let topLayer = document.getElementById('bg1');
-    let bottomLayer = document.getElementById('bg2');
     let lastIndex = -1;
   
-    function getRandomIndex() {
-      let index;
+    function changeBackground() {
+      let randomIndex;
       do {
-        index = Math.floor(Math.random() * images.length);
-      } while (index === lastIndex);
-      lastIndex = index;
-      return index;
-    }
+        randomIndex = Math.floor(Math.random() * images.length);
+      } while (randomIndex === lastIndex);
   
-    function crossfadeBackground() {
-      // Swap the roles
-      const temp = topLayer;
-      topLayer = bottomLayer;
-      bottomLayer = temp;
-  
-      // Set new background image on the now-hidden layer
-      const newImage = images[getRandomIndex()];
-      bottomLayer.style.backgroundImage = `url('${newImage}')`;
-      bottomLayer.style.opacity = 0;
-  
-      // Force repaint before transition (important!)
-      void bottomLayer.offsetWidth;
-  
-      // Fade in the top layer
-      topLayer.style.opacity = 1;
+      lastIndex = randomIndex;
+      document.body.style.backgroundImage = `url('${images[randomIndex]}')`;
     }
   
     // Set initial background
-    topLayer.style.backgroundImage = `url('${images[0]}')`;
-    topLayer.style.opacity = 1;
+    changeBackground();
   
-    // Start crossfade every 5 seconds
-    setInterval(crossfadeBackground, 5000);
+    // Change background every 5 seconds
+    setInterval(changeBackground, 5000);
   </script>
-
 
   
 </body>
