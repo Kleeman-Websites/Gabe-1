@@ -15,7 +15,6 @@
   <style>
     
     body {
-      background-image: url('your-background.jpg');
       background-color: #666666;
       color: #333;
       line-height: 1.6;
@@ -24,6 +23,7 @@
       background-position: center;
       margin: 0;
       font-family: sans-serif;
+      transition: background-image 1s ease-in-out;
     }
     
     header {
@@ -225,8 +225,7 @@
       </div>
     </a>
 
-<!-- There is no videos yet
-    <!-- Card 4 : Videos --
+    <!-- Card 4 : Videos -->
     <a href="video.html" class="card-link">
       <div class="card">
       <img src="images/gabe004.jpg" alt="Example Image" />
@@ -236,7 +235,6 @@
         </div>
       </div>
     </a>
--->
     
     <!-- Card 5 : "Endorsements" -->
     <a href="https://tigerfriday.com/?gad_source=1&gad_campaignid=9920573424&gclid=Cj0KCQjwyIPDBhDBARIsAHJyyVjxe4EHA4R4SLNbuHuWusaFBKv5Xxm6YtwOI04v6UVYQdM2_zg_bx8aAvt2EALw_wcB" class="card-link">
@@ -258,5 +256,73 @@
     <p> GoFundMe: website.com </p>
   </footer>
 
+<!-- Scripting -->
+  <script>
+    const images = [
+      'images/gabe001.jpg',
+      'images/gabe002.jpg',
+      'images/gabe003.jpg',
+      'images/gabe004.jpg',
+      'images/gabe005.jpg',
+      'images/gabe006.jpg',
+      'images/gabe007.jpg',
+      'images/gabe008.jpg',
+      'images/gabe009.jpg',
+      'images/gabe010.jpg',
+      'images/gabe011.jpg',
+      'images/gabe012.jpg',
+      'images/gabe013.jpg',
+      'images/gabe014.jpg',
+      'images/gabe015.jpg',
+      'images/gabe016.jpg',
+      'images/gabe017.jpg',
+      'images/gabe018.jpg',
+      'images/gabe019.jpg',
+      'images/gabe020.jpg',
+      'images/gabe021.jpg',
+      'images/gabe022.jpg',
+      'images/gabe023.jpg',
+      'images/gabe024.jpg',
+      'images/gabe025.jpg',
+      'images/gabe026.jpg',
+      'images/gabe027.jpg',
+      'images/gabe028.jpg',
+      'images/gabe029.jpg',
+      'images/gabe030.jpg',
+      'images/gabe031.jpg',
+      'images/gabe032.jpg',
+      'images/gabe033.jpg',
+      'images/gabe034.jpg',
+      'images/gabe035.jpg',
+      'images/gabe036.jpg',
+      'images/gabe037.jpg',
+      'images/gabe038.jpg',
+      'images/gabe039.jpg',
+      'images/gabe040.jpg',
+      'images/gabe041.jpg',
+      'images/gabe042.jpg',
+      // add more images here
+    ];
+  
+    let lastIndex = -1;
+  
+    function changeBackground() {
+      let randomIndex;
+      do {
+        randomIndex = Math.floor(Math.random() * images.length);
+      } while (randomIndex === lastIndex);
+  
+      lastIndex = randomIndex;
+      document.body.style.backgroundImage = `url('${images[randomIndex]}')`;
+    }
+  
+    // Set initial background
+    changeBackground();
+  
+    // Change background every 5 seconds
+    setInterval(changeBackground, 5000);
+  </script>
+
+  
 </body>
 </html>
