@@ -18,11 +18,12 @@
       background-color: #000;
       color: #333;
       line-height: 1.6;
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
       margin: 0;
       font-family: sans-serif;
+    
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: auto calc(100vh - 120px);
     }
     
     header {
@@ -152,6 +153,15 @@
     }
     
     @media (max-width: 600px) {
+
+      body {
+          /* If your header/footer are smaller on mobile, adjust calc here */
+          background-size: auto calc(100vh - 90px);
+          
+          /* Or simpler fallback */
+          /* background-size: cover; */
+      }
+      
       .card {
         flex-direction: row;     /* ✅ keep image on the left */
         align-items: center;
