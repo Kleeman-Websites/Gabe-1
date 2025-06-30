@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery Home Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #666666;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      color: white;
+      background-color: transparent;
+      border: 2px solid black;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: white;
+      color: #666666;
+    }
+
+    @media (max-width: 600px) {
+      .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <a class="btn" href="#link1">Professional Pictures</a>
+    <a class="btn" href="#link2">Fun Pictures</a>
+  </div>
+</body>
+</html>
