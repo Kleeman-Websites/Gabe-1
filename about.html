@@ -8,6 +8,8 @@
     body {
       margin: 0;
       padding: 0;
+      align-items: center;
+      justify-content: center;
       background-color: #666666; /* or change to #f0f0f0 or transparent */
       font-family: Arial, sans-serif;
       text-align: center;
@@ -24,8 +26,15 @@
     .caption {
       margin-top: 20px;
       font-size: 1.2rem;
-      color: #333;
+      color: white;
     }
+
+    @media (max-width: 600px) {
+      .caption {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+
   </style>
 </head>
 <body>
