@@ -56,6 +56,45 @@
       object-fit: contain;
       display: block;
     }
+
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 1rem;
+      text-align: center;
+    }
+    
+    .lightbox.show {
+      display: flex;
+    }
+    
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+      color: white;
+    }
+    
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border: 2px solid white;
+      border-radius: 8px;
+    }
+    
+    .lightbox-content p {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+
   </style>
 </head>
 <body>
@@ -63,20 +102,43 @@
   <h1>Professional Pictures</h1>
 
   <div class="image-gallery">
-    <button class="gallery-button">
-      <img src="images/image1.jpg" alt="Image 1">
-    </button>
-    <button class="gallery-button">
-      <img src="images/image2.jpg" alt="Image 2">
-    </button>
-    <button class="gallery-button">
-      <img src="images/image3.jpg" alt="Image 3">
-    </button>
-    <button class="gallery-button">
-      <img src="images/image4.jpg" alt="Image 4">
+    <button class="gallery-button" data-img="images/gabe001.jpg" data-caption="This is Image 1">
+      <img src="images/gabe001.jpg" alt="Image 1">
     </button>
     <!-- Add more buttons/images as needed -->
   </div>
 
+
+<!-- Scripting -->
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="">
+      <p id="lightbox-caption"></p>
+    </div>
+  </div>
+  
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+  
+    document.querySelectorAll('.gallery-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const imgSrc = button.getAttribute('data-img');
+        const caption = button.getAttribute('data-caption');
+  
+        lightboxImg.src = imgSrc;
+        lightboxCaption.textContent = caption;
+        lightbox.classList.add('show');
+      });
+    });
+  
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('show');
+    });
+  </script>
+
+  
 </body>
 </html>
