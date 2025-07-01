@@ -1,50 +1,70 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>! Under Construction !</title>
+  <title>Gallery</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
+      font-family: sans-serif;
+      background-color: #666666;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .gallery-button {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      background-color: transparent;
+      border: 2px solid black;
       padding: 0;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #666666; /* or change to #f0f0f0 or transparent */
-      font-family: Arial, sans-serif;
-      text-align: center;
+      transition: transform 0.2s ease;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
+
+    .gallery-button:hover {
+      transform: scale(1.05);
     }
-    img {
+
+    .gallery-button img {
       max-width: 100%;
-      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
     }
-    .caption {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      color: white;
-    }
-
-    @media (max-width: 600px) {
-      .caption {
-        font-size: 1rem;
-        padding: 0 10px;
-      }
-
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="galhome.html">
-      <img src="images/undercon.jpg" alt="[Construction Sign]" />
-    </a>
-    <div class="caption">
-      This section is currently under construction. Click the image to go back
-    </div>
+
+  <div class="image-gallery">
+    <button class="gallery-button">
+      <img src="images/image1.jpg" alt="Image 1">
+    </button>
+    <button class="gallery-button">
+      <img src="images/image2.jpg" alt="Image 2">
+    </button>
+    <button class="gallery-button">
+      <img src="images/image3.jpg" alt="Image 3">
+    </button>
+    <button class="gallery-button">
+      <img src="images/image4.jpg" alt="Image 4">
+    </button>
+    <!-- Add more buttons/images as needed -->
   </div>
+
 </body>
 </html>
