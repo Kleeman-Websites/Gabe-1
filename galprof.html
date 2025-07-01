@@ -19,6 +19,42 @@
       font-size: 2rem;
     }
 
+    .page-header {
+      position: relative;
+      width: 100%;
+      background-color: black;
+      color: white;
+      padding: 1rem 3rem; /* extra horizontal padding for the link */
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center; /* center the h1 */
+      align-items: center;
+    }
+    
+    .page-header h1 {
+      margin: 0;
+      font-size: 2rem;
+      text-align: center;
+      flex-grow: 1;
+    }
+    
+    .header-link {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .header-link:hover,
+    .header-link:focus {
+      text-decoration: underline;
+    }
+
+
     body {
       margin: 0;
       font-family: sans-serif;
@@ -101,7 +137,10 @@
 </head>
 <body>
 
-  <h1>Professional Pictures</h1>
+  <header class="page-header">
+    <a href="galhome.html" class="header-link">Back?</a>
+    <h1>Professional Pictures</h1>
+  </header>
 
   <div class="image-gallery">
     
