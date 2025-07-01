@@ -1,50 +1,186 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>! Under Construction !</title>
+  <title>Gallery</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      align-items: center;
-      justify-content: center;
-      background-color: #666666; /* or change to #f0f0f0 or transparent */
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-    .caption {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      color: white;
+    * {
+      box-sizing: border-box;
     }
 
-    @media (max-width: 600px) {
-      .caption {
-        font-size: 1rem;
-        padding: 0 10px;
-      }
+    h1 {
+      margin: 0;
+      padding: 1rem;
+      width: 100%;
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .page-header {
+      position: relative;
+      width: 100%;
+      background-color: black;
+      color: white;
+      padding: 1rem 3rem; /* extra horizontal padding for the link */
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center; /* center the h1 */
+      align-items: center;
+    }
+    
+    .page-header h1 {
+      margin: 0;
+      font-size: 2rem;
+      text-align: center;
+      flex-grow: 1;
+    }
+    
+    .header-link {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .header-link:hover,
+    .header-link:focus {
+      text-decoration: underline;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #666666;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .gallery-button {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      background-color: transparent;
+      border: none; /* No border on the button itself */
+      padding: 0;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .gallery-button img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      display: block;
+      border: 2px solid black; /* Outline is on the image now */
+      border-radius: 6px;
+      transition: transform 0.2s ease;
+    }
+    
+    .gallery-button:hover img {
+      transform: scale(1.05);
+    }
+
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 1rem;
+      text-align: center;
+    }
+    
+    .lightbox.show {
+      display: flex;
+    }
+    
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+      color: white;
+    }
+    
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border: 2px solid white;
+      border-radius: 8px;
+    }
+    
+    .lightbox-content p {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
 
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="galhome.html">
-      <img src="images/undercon.jpg" alt="[Construction Sign]" />
-    </a>
-    <div class="caption">
-      This section is currently under construction. Click the image to go back
+
+  <header class="page-header">
+    <a href="galhome.html" class="header-link"><-Back-</a>
+    <h1>Fun Pictures</h1>
+  </header>
+
+  <div class="image-gallery">
+    
+    <button class="gallery-button" data-img="images/gabe041.jpg" data-caption="">
+      <img src="images/gabe041.jpg" alt="Image 1">
+    </button>
+
+    <!-- Add more buttons/images as needed -->
+  </div>
+
+
+<!-- Scripting -->
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="">
+      <p id="lightbox-caption"></p>
     </div>
   </div>
+  
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+  
+    document.querySelectorAll('.gallery-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const imgSrc = button.getAttribute('data-img');
+        const caption = button.getAttribute('data-caption');
+  
+        lightboxImg.src = imgSrc;
+        lightboxCaption.textContent = caption;
+        lightbox.classList.add('show');
+      });
+    });
+  
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('show');
+    });
+  </script>
+
+  
 </body>
 </html>
